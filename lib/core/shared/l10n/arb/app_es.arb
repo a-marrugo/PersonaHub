@@ -1,4 +1,6 @@
 {
     "@@locale": "es",
-    "loginTitle": "Ingresa tus datos"
+    "start": "Comencemos",
+    "aboutApp": "Aplicación básica de creación de usuario, el cual se le podrán relacionar una o varias direcciones",
+    "lestGo": "Comenzar!"
 }
