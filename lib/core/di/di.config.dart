@@ -12,6 +12,14 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:personal_hub/core/di/di.dart' as _i721;
 import 'package:personal_hub/core/shared/router/router_app.dart' as _i267;
+import 'package:personal_hub/features/sign_up/data/data_sources/loca_services/local_storage_service.dart'
+    as _i754;
+import 'package:personal_hub/features/sign_up/data/repositories/user_repository_impl.dart'
+    as _i434;
+import 'package:personal_hub/features/sign_up/domain/repositories/user_repository.dart'
+    as _i967;
+import 'package:personal_hub/features/sign_up/domain/use_cases/save_user_use_case.dart'
+    as _i34;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -26,6 +34,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final injectableModule = _$InjectableModule();
     gh.lazySingleton<_i267.RouterApp>(() => injectableModule.router);
+    gh.factory<_i754.LocalStorageService>(
+        () => _i754.LocalStorageServiceImpl());
+    gh.factory<_i967.UserRepository>(
+        () => _i434.UserRepositoryImpl(gh<_i754.LocalStorageService>()));
+    gh.factory<_i34.SaveUserUseCase>(
+        () => _i34.SaveUserUseCase(gh<_i967.UserRepository>()));
     return this;
   }
 }

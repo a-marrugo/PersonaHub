@@ -17,5 +17,6 @@
     "termsPolicy": "términos y política de datos",
     "nameWrong": "Escriba un nombre válido",
     "lastNameWrong": "Escriba un apellido válido",
-    "birthdayWrong": "Debes ser mayor de edad para crear una cuenta"
+    "birthdayWrong": "Debes ser mayor de edad para crear una cuenta",
+    "somethingWasWrong": "Ocurrió un error inesperado"
 }

@@ -33,16 +33,7 @@ class RouterApp {
       ),
       GoRoute(
         path: RouteConstants.homePage.path,
-        pageBuilder: (context, state) => CustomTransitionPage(
-          key: state.pageKey,
-          child: const HomePage(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
-            );
-          },
-        ),
+        builder: (context, state) => const HomePage(),
       ),
     ],
   );

@@ -36,6 +36,11 @@ class _SignUpFormWidgetState extends ConsumerState<SignUpFormWidget>
     super.dispose();
   }
 
+  void _onSubmit() {
+    final userData = ref.read(userRegisterProvider);
+    ref.read(registerUserNotifier.notifier).fetchData(userData);
+  }
+
   @override
   Widget build(BuildContext context) {
     final newUser = ref.watch(userRegisterProvider);
@@ -76,7 +81,7 @@ class _SignUpFormWidgetState extends ConsumerState<SignUpFormWidget>
         ),
         const SizedBox(height: 55),
         TextButtonWidget(
-          onPressed: isValidForm() ? () {} : null,
+          onPressed: isValidForm() ? _onSubmit : null,
           text: context.l10n.register,
           textColor: AppPalette.primaryColor,
         ),
