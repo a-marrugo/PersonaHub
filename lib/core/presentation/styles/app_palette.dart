@@ -5,5 +5,7 @@ import 'package:flutter/material.dart';
 /// in the app.
 class AppPalette {
   static const Color bgColor = Color(0xFFFDB623);
+  static const Color accentColor = Color(0xFFFDB623);
   static const Color primaryColor = Color(0xFF333333);
+  static const Color colorError = Color(0xFFD24646);
 }

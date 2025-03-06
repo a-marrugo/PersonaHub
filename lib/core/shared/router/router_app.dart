@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:personal_hub/core/shared/router/route_constants.dart';
-import 'package:personal_hub/features/splash/presentation/pages/splash_page.dart';
+import 'package:personal_hub/features/sign_up/presentation/pages/sign_up_page.dart';
+import 'package:personal_hub/features/splash/presentation/pages/landing_page.dart';
 
 class RouterApp {
   /// Router configuration
@@ -10,8 +11,21 @@ class RouterApp {
     initialLocation: RouteConstants.splashPage.path,
     routes: [
       GoRoute(
-        path: '/',
-        builder: (context, state) => const SplashPage(),
+        path: RouteConstants.splashPage.path,
+        builder: (context, state) => const LandingPage(),
+      ),
+      GoRoute(
+        path: RouteConstants.signUpPage.path,
+        pageBuilder: (context, state) => CustomTransitionPage(
+          key: state.pageKey,
+          child: const SignUpPage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+        ),
       ),
     ],
   );

@@ -7,6 +7,7 @@ class BasePage extends StatelessWidget {
     required this.child,
     this.appBarTitle,
     this.appBarActions,
+    this.leading,
     this.bottomNavigationBar,
     this.backgroundColor,
   });
@@ -20,6 +21,9 @@ class BasePage extends StatelessWidget {
   /// Actions for the AppBar
   final List<Widget>? appBarActions;
 
+  /// Actions for the AppBar
+  final Widget? leading;
+
   /// Bottom navigation bar
   final Widget? bottomNavigationBar;
 
@@ -29,10 +33,14 @@ class BasePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor ?? AppPalette.bgColor,
-      appBar: appBarTitle != null
+      appBar: appBarTitle != null || leading != null
           ? AppBar(
-              title: Text(appBarTitle!),
+              title: Text(appBarTitle ?? ''),
               actions: appBarActions,
+              leading: Padding(
+                padding: const EdgeInsets.only(left: 20, top: 20),
+                child: leading,
+              ),
               backgroundColor: Colors.white,
               elevation: 0,
             )
