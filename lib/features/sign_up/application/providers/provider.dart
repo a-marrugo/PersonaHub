@@ -11,6 +11,8 @@ final userRegisterProvider = StateProvider<User>(
   (_) => const User(),
 );
 
+/// A `StateNotifierProvider` responsible for managing the
+/// state of user registration.
 final registerUserNotifier = StateNotifierProvider<
     BaseNotifier<BaseData<bool>, User, SaveUserUseCase>,
     BaseNotifierState<BaseData<bool>>>(
