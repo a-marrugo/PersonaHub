@@ -6,6 +6,9 @@ enum RouteConstants {
   /// The initial splash screen of the app.
   splashPage(path: '/'),
 
+  /// The home  screen of the app.
+  homePage(path: '/home'),
+
   /// The sign-up page for new users.
   signUpPage(path: '/sign_up');
 
