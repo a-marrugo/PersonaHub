@@ -12,6 +12,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:personal_hub/core/di/di.dart' as _i721;
 import 'package:personal_hub/core/shared/router/router_app.dart' as _i267;
+import 'package:personal_hub/features/home/domain/use_cases/get_user_use_case.dart'
+    as _i138;
 import 'package:personal_hub/features/sign_up/data/data_sources/loca_services/local_storage_service.dart'
     as _i754;
 import 'package:personal_hub/features/sign_up/data/repositories/user_repository_impl.dart'
@@ -40,6 +42,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i434.UserRepositoryImpl(gh<_i754.LocalStorageService>()));
     gh.factory<_i34.SaveUserUseCase>(
         () => _i34.SaveUserUseCase(gh<_i967.UserRepository>()));
+    gh.factory<_i138.GetUserUseCase>(
+        () => _i138.GetUserUseCase(gh<_i967.UserRepository>()));
     return this;
   }
 }

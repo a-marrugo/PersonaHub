@@ -52,7 +52,10 @@ class BasePage extends StatelessWidget {
           backgroundColor: backgroundColor ?? AppPalette.bgColor,
           appBar: (appBarTitle != null || leading != null)
               ? AppBar(
-                  title: Text(appBarTitle ?? ''),
+                  title: Text(
+                    appBarTitle ?? '',
+                    style: TextStyle(color: Colors.black),
+                  ),
                   actions: appBarActions,
                   leading: leading != null
                       ? Padding(

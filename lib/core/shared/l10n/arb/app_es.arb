@@ -18,5 +18,9 @@
     "nameWrong": "Escriba un nombre válido",
     "lastNameWrong": "Escriba un apellido válido",
     "birthdayWrong": "Debes ser mayor de edad para crear una cuenta",
-    "somethingWasWrong": "Ocurrió un error inesperado"
+    "somethingWasWrong": "Ocurrió un error inesperado",
+    "home": "Inicio",
+    "homeDescription": "Puedes agregar tus direcciones físicas en cualquier momento. Si necesitas más direcciones, simplemente agrégalas aquí.",
+    "goAddress": "Ir a mis direcciones"
+
 }

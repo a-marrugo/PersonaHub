@@ -37,8 +37,8 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
           setState(() {
             isLoading = false;
           });
-          context.router
-              .navigate(context, navigationConstant: RouteConstants.homePage);
+          context.router.navigate(context,
+              navigationConstant: RouteConstants.homePage, push: true);
         },
         error: (_, __) {
           setState(() {
@@ -68,7 +68,6 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       child: Image.asset(
                         AssetsConstantsImg.imgQRFill,
                         width: 160,
-                        height: 160,
                       ),
                     ),
                   ),

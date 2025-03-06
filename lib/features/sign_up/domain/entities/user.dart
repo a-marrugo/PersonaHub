@@ -15,6 +15,9 @@ class User with _$User {
 
   const User._();
 
+  /// Returns the full name by combining the [name] and [lastName] properties.
+  String fullName() => '$name $lastName';
+
   /// Checks if [name] is valid based on a predefined regex pattern.
   bool isValidName() =>
       name != null &&

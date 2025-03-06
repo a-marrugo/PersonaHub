@@ -11,7 +11,7 @@ class TextButtonWidget extends StatelessWidget {
     this.backgroundColor = const Color(0xFFFDB623),
     this.textColor = Colors.white,
     this.borderRadius = 8,
-    this.padding = const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+    this.padding = const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
     super.key,
   });
 

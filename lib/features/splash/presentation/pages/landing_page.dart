@@ -60,8 +60,8 @@ class _LandingPageState extends State<LandingPage>
             left: 0,
             child: Image.asset(
               AssetsConstantsImg.imgQR,
+              fit: BoxFit.cover,
               width: 160,
-              height: 160,
             ),
           ),
           Align(
@@ -114,6 +114,7 @@ class _LandingPageState extends State<LandingPage>
                       TextButtonWidget(
                         onPressed: () => context.router.navigate(
                           context,
+                          push: true,
                           navigationConstant: RouteConstants.signUpPage,
                         ),
                         text: context.l10n.lestGo,
