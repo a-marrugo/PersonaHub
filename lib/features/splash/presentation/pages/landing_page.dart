@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:personal_hub/core/presentation/pages/base_page.dart';
 import 'package:personal_hub/core/presentation/styles/app_palette.dart';
+import 'package:personal_hub/core/presentation/widgets/text_button_widget.dart';
 import 'package:personal_hub/core/shared/constants/assets_constants.dart';
+import 'package:personal_hub/core/shared/extensions/build_context_extension.dart';
 import 'package:personal_hub/core/shared/l10n/l10n.dart';
+import 'package:personal_hub/core/shared/router/route_constants.dart';
 
-/// SplashPage is the initial screen of the app.
+/// LandingPage is the initial screen of the app.
 ///
 /// It displays a logo/image at the top and a bottom card with a title,
 /// description, and a call-to-action button.
-class SplashPage extends StatelessWidget {
-  const SplashPage({super.key});
+class LandingPage extends StatelessWidget {
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,41 +74,15 @@ class SplashPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    SizedBox(
-                      width: double.infinity,
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          backgroundColor: const Color(0xFFFDB623),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 12, horizontal: 24),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  context.l10n.lestGo,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    color: AppPalette.primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Icon(
-                              Icons.arrow_forward_rounded,
-                              color: AppPalette.primaryColor,
-                            ),
-                          ],
-                        ),
+                    TextButtonWidget(
+                      onPressed: () => context.router.navigate(
+                        context,
+                        navigationConstant: RouteConstants.signUpPage,
                       ),
-                    )
+                      text: context.l10n.lestGo,
+                      icon: Icons.arrow_forward_rounded,
+                      textColor: AppPalette.primaryColor,
+                    ),
                   ],
                 ),
               ),
