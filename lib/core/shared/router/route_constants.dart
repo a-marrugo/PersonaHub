@@ -1,6 +1,6 @@
 enum RouteConstants {
-  /// Login page
-  splashPage(path: '/');
+  splashPage(path: '/'),
+  signUpPage(path: '/sign_up');
 
   const RouteConstants({required this.path});
 
