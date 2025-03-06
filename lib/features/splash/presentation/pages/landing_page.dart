@@ -60,8 +60,7 @@ class _LandingPageState extends State<LandingPage>
             left: 0,
             child: Image.asset(
               AssetsConstantsImg.imgQR,
-              fit: BoxFit.cover,
-              width: 160,
+              height: 160,
             ),
           ),
           Align(
