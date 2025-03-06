@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:personal_hub/core/presentation/styles/font_family.dart';
 
+/// A customizable text button with optional icon support.
 class TextButtonWidget extends StatelessWidget {
+  /// Creates a `TextButtonWidget`.
   const TextButtonWidget({
-    required this.onPressed,
     required this.text,
+    this.onPressed,
     this.icon,
     this.backgroundColor = const Color(0xFFFDB623),
     this.textColor = Colors.white,
@@ -12,22 +15,38 @@ class TextButtonWidget extends StatelessWidget {
     super.key,
   });
 
-  final VoidCallback onPressed;
+  /// Callback function triggered when the button is pressed.
+  final VoidCallback? onPressed;
+
+  /// The text displayed inside the button.
   final String text;
+
+  /// An optional icon displayed beside the text.
   final IconData? icon;
+
+  /// The background color of the button.
   final Color backgroundColor;
+
+  /// The color of the text and icon.
   final Color textColor;
+
+  /// The border radius of the button.
   final double borderRadius;
+
+  /// The padding inside the button.
   final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
+    final isDisabled = onPressed == null;
+
     return SizedBox(
       width: double.infinity,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: backgroundColor,
+          backgroundColor: isDisabled ? Colors.grey[300] : backgroundColor,
+          foregroundColor: isDisabled ? Colors.grey[500] : textColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
@@ -37,13 +56,12 @@ class TextButtonWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Align(
-                alignment: Alignment.center,
                 child: Text(
                   text,
                   style: TextStyle(
                     fontSize: 15,
-                    color: textColor,
-                    fontWeight: FontWeight.bold,
+                    color: isDisabled ? Colors.grey[500] : textColor,
+                    fontWeight: FontW.bold,
                   ),
                 ),
               ),
@@ -51,7 +69,7 @@ class TextButtonWidget extends StatelessWidget {
             if (icon != null)
               Icon(
                 icon,
-                color: textColor,
+                color: isDisabled ? Colors.grey[500] : textColor,
               ),
           ],
         ),

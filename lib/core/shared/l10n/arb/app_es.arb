@@ -2,5 +2,20 @@
     "@@locale": "es",
     "start": "Comencemos",
     "aboutApp": "Aplicación básica de creación de usuario, el cual se le podrán relacionar una o varias direcciones",
-    "lestGo": "Comenzar!"
+    "lestGo": "Comenzar!",
+    "alreadyHaveAccount": "¿Ya cuentas con una cuenta?",
+    "login": "Inicia sesión",
+    "signUp": "Registro",
+    "register": "Registrar",
+    "name": "Nombre",
+    "yourName": "Tu nombre",
+    "lastName": "Apellido",
+    "yourLastName": "Tu apellido",
+    "birthday": "Cumpleaños",
+    "yourBirthday": "Tu cumpleaños",
+    "acceptTerms": "Al presionar 'Registrar' aceptas nuestros",
+    "termsPolicy": "términos y política de datos",
+    "nameWrong": "Escriba un nombre válido",
+    "lastNameWrong": "Escriba un apellido válido",
+    "birthdayWrong": "Debes ser mayor de edad para crear una cuenta"
 }
